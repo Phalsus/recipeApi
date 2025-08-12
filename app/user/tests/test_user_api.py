@@ -86,11 +86,11 @@ class PublicUserApiTests(TestCase):
 
     def test_create_token_bad_credentials(self):
         """Test returns error if credentials invalid"""
-        create_user(email="test@example.com", password = "goodpass")
+        create_user(email="test@example.com", password="goodpass")
 
         payload = {
-            "email" : "test@example.com",
-            "password" : "badpass"
+            "email": "test@example.com",
+            "password": "badpass"
         }
         res = self.client.post(TOKEN_URL, payload)
 
@@ -100,8 +100,8 @@ class PublicUserApiTests(TestCase):
     def test_create_token_blank_password(self):
         """test posting a blank password returns error"""
         payload = {
-            "email" : "test@example.com",
-            "password" : ""
+            "email": "test@example.com",
+            "password": ""
         }
         res = self.client.post(TOKEN_URL, payload)
 
@@ -121,7 +121,7 @@ class PrivateUserApiTests(TestCase):
         self.user = create_user(
             email="test@example.com",
             password="testpass123",
-            name = "Test Name",
+            name="Test Name",
         )
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
@@ -151,7 +151,7 @@ class PrivateUserApiTests(TestCase):
 
         res = self.client.patch(ME_URL, payload)
 
-        self.user.refresh_from_db() #the database needs to be refreshed normally
+        self.user.refresh_from_db()
         self.assertEqual(self.user.name, payload["name"])
         self.assertTrue(self.user.check_password(payload["password"]))
         self.assertEqual(res.status_code, status.HTTP_200_OK)
