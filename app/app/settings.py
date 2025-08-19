@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-44g2kylnmu11+63#c+rs^#9fwnk@20k^x*ck*9h3**um5ga*^q
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://recipeapi-br9k.onrender.com',
+    'recipeapi-br9k.onrender.com',
 ]
 
 
