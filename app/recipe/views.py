@@ -20,6 +20,7 @@ from rest_framework.authentication import TokenAuthentication
 from core.models import Recipe, Tag, Ingredient
 from recipe import serializers
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
