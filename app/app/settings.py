@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-44g2kylnmu11+63#c+rs^#9fwnk@20k^x*ck*9h3**um5ga*^q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'recipeapi-br9k.onrender.com',
