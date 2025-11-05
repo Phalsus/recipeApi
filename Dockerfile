@@ -9,7 +9,7 @@ COPY ./scripts /scripts
 COPY ./app /app
 
 WORKDIR /app
-EXPOSE 8000
+EXPOSE 10000
 
 ARG DEV=false
 RUN python -m venv /py && \
